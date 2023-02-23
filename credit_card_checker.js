@@ -38,3 +38,34 @@ const batch = [
   mystery5,
 ];
 
+// Use Luhn algorithm to validate a credit card number and return True/False
+const validateCred = (card) => {
+  let sum = 0;
+  sum += card[card.length - 1];
+  // double every other digit excpet for the check digit on the right
+  for (let i = card.length - 2; i >= 0; i -= 2) {
+    let doubled = card[i] *= 2;
+    // if num is greater than 9 after doubling, subtract 9
+    if (doubled > 9) {
+      doubled -= 9;
+    }
+    sum += doubled;
+  }
+  // add digits that are not doubled
+  for (let i = card.length - 3; i >= 0; i -= 2) {
+    sum += card[i];
+  }
+  // validate a card on the sum modulo
+  return sum % 10 == 0 ? true : false;
+};
+// console.log(validateCred(valid4));
+
+const findInvalidCards = batch => {
+  let invalidCards = [];
+  for (i = 0; i < batch.length; i++) {
+    if (!validateCred(batch[i])) {
+    invalidCards.push(batch[i]);
+    }
+  }
+  return invalidCards;
+};
