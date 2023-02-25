@@ -41,10 +41,11 @@ const batch = [
 // Use Luhn algorithm to validate a credit card number and return True/False
 const validateCred = (card) => {
   let sum = 0;
+  // add the check digit that isn"t doubled
   sum += card[card.length - 1];
   // double every other digit excpet for the check digit on the right
   for (let i = card.length - 2; i >= 0; i -= 2) {
-    let doubled = card[i] *= 2;
+    let doubled = (card[i] * 2);
     // if num is greater than 9 after doubling, subtract 9
     if (doubled > 9) {
       doubled -= 9;
@@ -56,16 +57,48 @@ const validateCred = (card) => {
     sum += card[i];
   }
   // validate a card on the sum modulo
-  return sum % 10 == 0 ? true : false;
+  return (sum % 10 == 0) ? true : false;
 };
-// console.log(validateCred(valid4));
+console.log(validateCred(valid1)); // true
+console.log(validateCred(invalid5)); // false
 
-const findInvalidCards = batch => {
+// Return a nested array of invalid cards
+const findInvalidCards = (batch) => {
   let invalidCards = [];
   for (i = 0; i < batch.length; i++) {
     if (!validateCred(batch[i])) {
-    invalidCards.push(batch[i]);
+      invalidCards.push(batch[i]);
     }
   }
   return invalidCards;
 };
+const invalidCards = findInvalidCards(batch);
+console.log(invalidCards);
+
+// List companies that may have issued invalid cards
+const idInvalidCardCompanies = () => {
+  const invalidCardCompanies = [];
+  for (let i = 0; i < invalidCards.length; i++) {
+    const badCard = invalidCards[i];
+    for (let j = 0; j < 1; j++) {
+      switch (badCard[j]) {
+        case badCard[j][0] = 3:
+          invalidCardCompanies.push("Amex");
+          break;
+        case badCard[j][0] = 4:
+          invalidCardCompanies.push("Visa");
+          break;
+        case badCard[j][0] = 5:
+          invalidCardCompanies.push("MasterCard");
+          break;
+        case badCard[j][0] = 6:
+          invalidCardCompanies.push("Discover");
+          break;
+        default: 
+          invalidCardCompanies.push("Company not found");
+      }
+    }
+  }
+  return invalidCardCompanies.filter((a, b) => invalidCardCompanies.indexOf(a) === b);
+};
+console.log(idInvalidCardCompanies()); // [ 'Visa', 'MasterCard', 'Amex', 'Discover' ]
