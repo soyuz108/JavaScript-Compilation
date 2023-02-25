@@ -78,8 +78,10 @@ console.log(invalidCards);
 // List companies that may have issued invalid cards
 const idInvalidCardCompanies = () => {
   const invalidCardCompanies = [];
+  // loop through the invalid cards list to get separate cards
   for (let i = 0; i < invalidCards.length; i++) {
     const badCard = invalidCards[i];
+    // loop through each card to check on the first digit and populate the companies list
     for (let j = 0; j < 1; j++) {
       switch (badCard[j]) {
         case badCard[j][0] = 3:
@@ -99,6 +101,7 @@ const idInvalidCardCompanies = () => {
       }
     }
   }
+  // filter on the companies list for unique values only
   return invalidCardCompanies.filter((a, b) => invalidCardCompanies.indexOf(a) === b);
 };
 console.log(idInvalidCardCompanies()); // [ 'Visa', 'MasterCard', 'Amex', 'Discover' ]
