@@ -1,4 +1,4 @@
-// Store random data in an object
+// Stores random data in an object
 const randomData = {
   intro: [
     "Sorry I can't come",
@@ -32,10 +32,17 @@ const randomData = {
     "gave me syphilis",
     "poured lemonade in my tank",
     "stabbed me",
-    "found my bpx of human teeth",
+    "found my box of human teeth",
     "stole my bicycle",
     "posted my Instagram",
   ],
 };
 
-// 
+// Generates a random number/choice
+const randomNumber = Math.floor(Math.random() * 10);
+
+// Create a random excuse message
+const getRandomExcuse = () => {
+  console.log(`${randomData.intro[randomNumber]} ${randomData.scapegoat[randomNumber]} ${randomData.delay[randomNumber]}.`);
+};
+getRandomExcuse(); // Test result: I regretfully cannot attend, a professional cricket team stole my bicycle.
