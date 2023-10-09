@@ -41,7 +41,7 @@ const randomData = {
 // Generates a random number/choice
 const randomNumber = Math.floor(Math.random() * 10);
 
-// Create a random excuse message
+// Creates a random excuse message
 const getRandomExcuse = () => {
   console.log(`${randomData.intro[randomNumber]} ${randomData.scapegoat[randomNumber]} ${randomData.delay[randomNumber]}.`);
 };
