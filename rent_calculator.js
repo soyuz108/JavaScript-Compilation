@@ -3,6 +3,8 @@ If you rent the car for 7 or more days, you get $50 off your total.
 Alternatively, if you rent the car for 3 or more days, you get $20 off your total. 
 The function must return the total amount for different days.*/
 
+
+// Classic function
 function rentalCarCost(d) {
   const price = 40;
   const total = price * d;
@@ -13,6 +15,11 @@ function rentalCarCost(d) {
   } else {
     return total;
   }
+}
+
+// Refactored
+function rentalCarCost(d) {
+  return d * 40 - (d >= 7 ? 50 : d >= 3 ? 20 : 0);
 }
 
 // Valid tests
