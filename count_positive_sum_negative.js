@@ -40,3 +40,23 @@ describe("Basic tests", () => {
     assert.deepEqual(actual, expected);
   });
 });
+
+// Variant with For Loop
+function countPositivesSumNegatives(input) {
+  let positivesCount = 0;
+  let negativesSum = 0;
+
+  // check if array is null or empty
+  if (input && input.length) {
+    for (let i = 0; i < input.length; i++) {
+      if (input[i] > 0) {
+        positivesCount++;
+      } else if (input[i] < 0) {
+        negativesSum += input[i];
+      }
+    }
+  } else {
+    return [];
+  }
+  return [positivesCount, negativesSum];
+}
