@@ -41,6 +41,10 @@ function hasSurvived(attackers, defenders) {
   }
 }
 
+// Testing opposite cases
+console.log(hasSurvived([2, 9, 9, 7], [1, 1, 3, 8])); // false
+console.log(hasSurvived([], [1, 2, 3])); // true
+
 // Basic tests
 const chai = require("chai");
 const assert = chai.assert;
