@@ -25,6 +25,12 @@ function DNAStrand(dna) {
     }
   }
   return complementary;
-}
+} 
 
+// Testing valid cases
 console.log(DNAStrand("ATTGC")); // TAACG
+console.log(DNAStrand("GCTAG")); // CGATC
+console.log(DNAStrand("TAAC")); // ATTG
+// One line variant
+let pairs = { A: "T", T: "A", C: "G", G: "C" };
+const DNAStrand = dna => dna.replace(/./g, c => pairs[c]);
