@@ -1,3 +1,3 @@
 # JavaScript-Compilation
 
-<a href="https://www.codewars.com/users/so_val/badges/large">
+<img src="https://www.codewars.com/users/so_val/badges/large" />
