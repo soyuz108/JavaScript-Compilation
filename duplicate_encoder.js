@@ -30,3 +30,15 @@ console.log(duplicateEncode("din")); // (((
 console.log(duplicateEncode("recede")); // ()()()
 console.log(duplicateEncode("Success")); // )())())
 console.log(duplicateEncode("(( @")); // ))((
+
+// Simplified function
+function duplicateEncode(word) {
+  return (
+    word
+      .toLowerCase()
+      .split("")
+      // (currentItem, index, array)
+      .map((c, i, a) => (a.indexOf(c) == a.lastIndexOf(c) ? "(" : ")"))
+      .join("")
+  );
+}
