@@ -15,3 +15,9 @@ function breakCamel(str) {
 console.log(breakCamel("camelCasing")); // camel Casing
 console.log(breakCamel("identifier")); // identifier
 console.log(breakCamel("")); // ""
+
+// Using regex
+function breakCamel(string) {
+  // $1 is a grouped match (in this case an Uppercase letter) that is replaced with a space and a group
+  return string.replace(/([A-Z])/g, " $1");
+}
