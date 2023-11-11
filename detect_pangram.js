@@ -19,3 +19,10 @@ function isPangram(str) {
 console.log(isPangram("The quick brown fox jumps over the lazy dog.")); // true
 console.log(isPangram("This is not a pangram.")); // false
 console.log(isPangram("")); // false
+
+// Simplified function
+function isPangram(str) {
+  const alpha = "abcdefghijklmnopqrstuvwxyz".split("");
+  // whether all elements in the array pass the test
+  return alpha.every((e) => str.toLowerCase().includes(e));
+}
