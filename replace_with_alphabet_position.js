@@ -24,3 +24,13 @@ console.log(alphabetPosition("Hello World")); // 8 5 12 12 15 23 15 18 12 4
 console.log(alphabetPosition("$rhru!-$")); // 18 8 18 21
 console.log(alphabetPosition("wwz+")); // 23 23 26
 console.log(alphabetPosition("")); // " "
+
+// One line function
+function alphabetPosition(text) {
+  return text
+    .toLowerCase()
+    .split("")
+    .map((a) => a.charCodeAt(0) - 96)
+    .filter((a) => a > 0 && a < 27)
+    .join(" ");
+}
