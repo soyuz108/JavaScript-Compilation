@@ -26,3 +26,12 @@ console.log(count("")); // {}
 console.log(count("aba")); // { a: 2, b: 1 }
 console.log(count("Aab")); // { a: 2, b: 1 }
 console.log(count("Hello World")); // { h: 1, e: 1, l: 3, o: 2, ' ': 1, w: 1, r: 1, d: 1 }
+
+// Simplified function
+function count(str) {
+  let pairs = {};
+  str.split("").forEach(char => {
+    pairs[char] ? pairs[char]++ : (pairs[char] = 1);
+  });
+  return pairs;
+}
