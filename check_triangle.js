@@ -10,3 +10,5 @@ function isTriangle(a, b, c) {
 console.log(isTriangle(1, 2, 2)); // true
 console.log(isTriangle(7, 2, 2)); // false
 console.log(isTriangle(8, 5)); // One of the parameters is empty.
+console.log(isTriangle(6, -2, 1)); // false
+console.log(isTriangle(0, 3, 8)); // One of the parameters is empty.
