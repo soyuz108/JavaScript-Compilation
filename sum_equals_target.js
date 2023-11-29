@@ -7,12 +7,8 @@ The target number will always be the sum of two different items from that array)
 // Classic function
 function checkTarget(numbers, target) {
   for (let i = 0; i < numbers.length; i++) {
-    let e1 = numbers[i];
     for (let j = i + 1; j < numbers.length; j++) {
-      let e2 = numbers[j];
-      if (e1 + e2 === target) {
-        return [i, j];
-      }
+      if (numbers[i] + numbers[j] === target) return [i, j];
     }
   }
 }
